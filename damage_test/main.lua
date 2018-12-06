@@ -48,5 +48,5 @@ end
 
 
 mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.update);
-mod:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG , mod.countdamage, mod.ENTITY_MONSTRO);
+mod:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG , mod.countdamage, mod.ENTITY_MEGA_MAW);
 
