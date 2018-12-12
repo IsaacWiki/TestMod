@@ -3,6 +3,7 @@
 -- 设置每帧掉落心个数
 local heart_num = 1000
 
+local is_on = false
 local game = Game();
 local mod = RegisterMod("test_heart", 1);
 local player = Isaac.GetPlayer(1)
@@ -25,7 +26,6 @@ local HeartName = {
 
 
 function add_count(subtype)
-    --辅助函数[]=is_gold, 0表示不是，1表示是金大便
     sum = sum + 1
     if counts[subtype] then
         counts[subtype] = counts[subtype] + 1
@@ -34,6 +34,10 @@ function add_count(subtype)
     end
 end
 
+function reset()
+    counts = {}
+    sum = 0
+end
 
 function mod:handler_game_start()
     player = Isaac.GetPlayer(1)
@@ -46,13 +50,15 @@ mod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED , mod.handler_game_start);
 
 
 function count_heart(multi)
-    for i=1,heart_num do
-        heart = game:Spawn(
-            EntityType.ENTITY_PICKUP, 10, -- 心
-            Vector(0,0), Vector(0,0),
-            player, 0, i+heart_num*multi)
-        add_count(heart.SubType)
-        heart:Remove()
+    if is_on then
+        for i=1,heart_num do
+            heart = game:Spawn(
+                EntityType.ENTITY_PICKUP, 10, -- 心
+                Vector(0,0), Vector(0,0),
+                player, 0, i+heart_num*multi)
+            add_count(heart.SubType)
+            heart:Remove()
+        end
     end
 end
 
@@ -77,3 +83,15 @@ function mod:update()
     count_heart(game:GetFrameCount())
 end
 mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.update);
+
+function mod:command(cmd, params)
+    if (cmd == "mod") then
+        if (params == "on") then
+            is_on = (not is_on)
+        end
+        if (params == "reset") then
+            reset()
+        end
+    end
+end
+mod:AddCallback(ModCallbacks.MC_EXECUTE_CMD, mod.command);
