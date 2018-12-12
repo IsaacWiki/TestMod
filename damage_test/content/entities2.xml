@@ -1,0 +1,42 @@
+<entities anm2root="gfx/" version="5">
+    <entity
+        anm2path="027.000_Host.anm2"
+        id="13"
+        variant="1"
+        name="hugefly"
+        reroll="true"
+        baseHP="9999"
+        boss="1"
+        champion="0"
+        friction="1"
+        shadowSize="25" 
+        tageHP="0"
+        collisionDamage="0"
+        collisionMass="12"
+        collisionRadius="300"
+        numGridCollisionPoints="12"
+    >
+    <gibs amount="" blood="1" bone="0" eye="0" gut="0" large="0" worm="1" />
+        <preload-snd id="166" />
+    </entity>
+    <entity
+        anm2path="027.000_Host.anm2"
+        id="24"
+        variant="4"
+        name="hugeglobin"
+        reroll="true"
+        baseHP="9999"
+        boss="1"
+        champion="0"
+        friction="1"
+        shadowSize="25" 
+        tageHP="0"
+        collisionDamage="0"
+        collisionMass="12"
+        collisionRadius="300"
+        numGridCollisionPoints="12"
+    >
+    <gibs amount="" blood="0" bone="0" eye="0" gut="0" large="0" worm="0" />
+        <preload-snd id="166" />
+    </entity>
+</entities>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>A Debugging Tool</name>
+    <directory>debug</directory>
+    <id>942078486</id>
+    <description>A really useful debugging tool I created a while ago.
+All the following features can be activated/deactivated from the in-game console. Just enable this mod when you want to debug, and disable it when you want to play.
+
+Here's what it does:
+
+- spawns all modded items at the beginning of a new run.
+- debugs basic game stuff (curses, last damage source and flag, current room id...)
+
+- debugs type.variant.subtype of every entity.
+- debugs spawner of every entity.
+
+- debugs health and npcState of enemies.
+
+- shows a list of all sounds played in a room.
+
+Here's a lit of the commands:
+ - &quot;moddebug help&quot;: shows a list of all the commands
+ - &quot;moddebug spawnitems&quot;: Toggles modded items spawning on/off
+ - &quot;moddebug spawntrinkets&quot;: Toggles modded trinket spawning on/off
+ - &quot;moddebug gameinfo&quot;: Toggles game info debugging on/off
+ - &quot;moddebug sfx&quot;: Toggles sfx debugging on/off
+ - &quot;moddebug enemies&quot;: Toggles enemy debugging on/off
+ - &quot;moddebug pickups&quot;: Toggles pickup debugging on/off
+ - &quot;moddebug items&quot;: Toggles item debugging on/off
+ - &quot;moddebug all&quot;: Toggles all entities debugging on/off</description>
+    <version>1.3</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Tweaks"/>
+</metadata>

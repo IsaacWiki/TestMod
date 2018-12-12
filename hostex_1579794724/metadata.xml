@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>HostEX</name>
+    <directory>hostex</directory>
+    <id>1579794724</id>
+    <description>This modds adds 4 new Host types that acts similar to Met variations from Mega Man game series. How they work you can see on gifs (they can a little lag). All the new variations can replace original Host with ~33%. 
+
+Thanks to:
+
+Wonsacz - for helping with Spinning Host sprite
+RendersDude - for making most of the spritesheets
+Pixel_Devil - for some Metal footage
+You - for downloading this mod
+</description>
+    <version>1.1</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Rooms"/>
+    <tag id="Enemies"/>
+    <tag id="Graphics"/>
+</metadata>

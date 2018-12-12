@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>No Pickup Cap</name>
+    <directory>nopickupcap</directory>
+    <id>1309404579</id>
+    <description>Want to have more than 99 coins/keys/bombs? The 'No Pickup Cap' mod lets you do just that!
+
+This counterpart to the 'No Health Cap mod' keeps track of your coins, bombs and keys and lets you store as many as you want!
+
+Like the 'No Health Cap' mod you can use the console to set a custom limit, just enter the command &quot;pickupcap X&quot;, or if you want limits unique to coins/bombs/keys you can use &quot;coincap X&quot;, &quot;bombcap X&quot; or &quot;keycap X&quot;.
+Use -1 for X to set the cap to 999999999999999999 (the values can't go too much higher than that without overflowing back to negative)
+
+This limit can also be lower than the default, so if you want to use this mod to make things more challenging rather than easier, you can set a low limit for your pickups.
+
+You can double check your pickup caps at any time by opening the console and entering &quot;showpickupcaps&quot;.
+
+This works with money=power and greed's gullet (though the damage calculations might be a little off with money=power, it was super annoying to work around, greed's gullet also works with the no health cap mod)
+
+While in shops the coin amount will display a little different, this is to ensure that the game wont think you can't afford to buy something when you actually can, the mod may sometimes have trouble calculating correct amounts if you gain 90+ of a pickup in a single frame, but the margin of error should be pretty small.
+
+The values for total coin/bomb/key count, as well as the limits for each, are global variables and can be viewed and updated by other mods, so if you want to make your mod check how much of a pickup the player has or set/increase/decrease the pickup limits, the variables are:
+PickupCapCoinNum, PickupCapBombNum, PickupCapKeyNum, PickupCapCoinLimit, PickupCapBombLimit and PickupCapKeyLimit
+
+You can checkout my &quot;Health and Pickups Pack&quot; to see examples.
+
+You can adjust the display to fit your preferred HUD offset by opening the console and typing &quot;hudoffset X&quot; where X is a number from 0 to 10.
+
+Also keep in mind there might be weird bugs if you are using this with modded items or characters that have mechanics involving the players held pickups.
+
+
+Feedback and bug reports are appreciated.</description>
+    <version>1.26</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Pickups"/>
+    <tag id="Tweaks"/>
+</metadata>

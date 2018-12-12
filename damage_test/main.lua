@@ -1,20 +1,18 @@
 local mod = RegisterMod("test_lilhaunt", 1);
 local game = Game();
 damages = {}
-ds = nil
-td = nil
-da = nil
+start_time = 0
+
+function SpawnTestMonster()
+    
+end
+
 
 function mod:countdamage(TookDamage, DamageAmount, DamageFlag, DamageSource, DamageCountdownFrames)
-    ds = DamageSource
-    da = DamageAmount
-    td = TookDamage
-    
-    damages[#damages+1] = game.TimeCounter
-    -- if DamageSource then
-    --     if DamageSource and DamageSource.ToFamiliar then
-    --     end 
-    -- end
+    if #damages == 0 then
+        start_time = game.TimeCounter
+    end
+    damages[#damages+1] = game.TimeCounter - start_time
     return true
 end
 
@@ -33,14 +31,20 @@ function mod:update()
     --         150, 35,
     --         0.5, 0.5, 255, 255, 255, 255);   
     -- end
-    Isaac.RenderScaledText(
-        'Counts: ' ..  table.concat(damages, ","),
-        100, 40,
-        0.5, 0.5, 255, 255, 255, 255);      
-    Isaac.RenderScaledText(
-        'Times: ' ..  game.TimeCounter,
-        50, 50,
-        0.5, 0.5, 255, 255, 255, 255);   
+    local i = 0;
+    while (i*10 < #damages)
+    do
+        -- Isaac.RenderScaledText(
+        --     'Counts: ' ..  damages[#damages],
+        --     100, 40+i*5,
+        --     0.5, 0.5, 255, 255, 255, 255);
+        s = table.concat(damages, ",", i*10+1, math.min(i*10+10, #damages))
+        Isaac.RenderScaledText(
+            'Counts: ' ..  s,
+            100, 40+i*5,
+            0.5, 0.5, 255, 255, 255, 255);
+        i = i + 1
+    end 
 end
 
 

@@ -1,0 +1,31 @@
+<entities anm2root="gfx/" version="5">
+    <entity anm2path="rightround.anm2" reroll="true" baseHP="28" boss="0" champion="1" collisionDamage="0" collisionMass="15" collisionRadius="13" friction="1" id="27" name="ex1" numGridCollisionPoints="12" shadowSize="25" stageHP="0" variant="444" portrait="24" bestiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Shoot">
+        <gibs amount="6" blood="1" bone="1" eye="0" gut="0" large="0" worm="1" />
+        <preload-snd id="166" /> <!-- SOUND_ANIMAL_SQUISH -->
+    </entity>
+	    <entity anm2path="projex.anm2" baseHP="10" boss="0" champion="0" collisionDamage="0" collisionMass="8" collisionRadius="5" friction="1" id="9" name="projex" numGridCollisionPoints="60" shadowSize="10" stageHP="0" variant="0" subtype="445">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+    </entity>
+	    <entity anm2path="jumper1.anm2" reroll="true" baseHP="20" boss="0" champion="1" collisionDamage="0" collisionMass="10" collisionRadius="13" friction="1" id="27" name="ex21" numGridCollisionPoints="12" shadowSize="28" stageHP="0" variant="445" portrait="24" bestiary="false" >
+        <gibs amount="6" blood="1" bone="1" eye="0" gut="0" large="0" worm="1" />
+        <preload-snd id="166" /> <!-- SOUND_ANIMAL_SQUISH -->
+    </entity>
+	    <entity anm2path="jumpfucker.anm2" reroll="true" baseHP="10" boss="0" champion="1" collisionDamage="1" collisionMass="10" collisionRadius="13" friction="1" id="29" name="ex22" numGridCollisionPoints="12" shadowSize="28" stageHP="0" variant="445" portrait="26" bestiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Hop">
+        <gibs amount="6" blood="1" bone="1" eye="1" gut="1" large="0" />
+    </entity>
+	    <entity anm2path="miniboi.anm2" reroll="true" baseHP="12" boss="0" champion="0" collisionDamage="1" collisionMass="3" collisionRadius="13" friction="1" id="11" subtype="444" name="minihost" numGridCollisionPoints="12" shadowSize="15" stageHP="0" variant="1" portrait="52" bestiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Walk Happy">
+        <gibs amount="4" blood="1" bone="0" eye="0" gut="1" large="0" />
+        <preload-snd id="205" /> <!-- SOUND_GOOATTACH0 -->
+    </entity>
+	    <entity anm2path="027.000_Host.anm2" reroll="true" baseHP="14" boss="0" champion="1" collisionDamage="0" collisionMass="15" collisionRadius="13" friction="1" id="27" name="hsplit" numGridCollisionPoints="12" shadowSize="25" stageHP="0" variant="446" portrait="24" bestiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Shoot">
+        <gibs amount="6" blood="1" bone="1" eye="0" gut="0" large="0" worm="1" />
+        <preload-snd id="166" /> <!-- SOUND_ANIMAL_SQUISH -->
+    </entity>
+		<entity anm2path="spiderhost-static.anm2" reroll="true" baseHP="14" boss="0" champion="1" collisionDamage="0" collisionMass="15" collisionRadius="13" friction="1" id="27" name="ex31" numGridCollisionPoints="12" shadowSize="25" stageHP="0" variant="447" portrait="24" bestiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Shoot">
+        <gibs amount="6" blood="1" bone="1" eye="0" gut="0" large="0" worm="1" />
+        <preload-snd id="166" /> <!-- SOUND_ANIMAL_SQUISH -->
+    </entity>
+		<entity anm2path="spiderhost-walk.anm2" baseHP="14" boss="0" champion="0" collisionDamage="1" collisionMass="10" collisionRadius="10" friction="1" id="207" name="ex32" numGridCollisionPoints="12" shadowSize="25" stageHP="0" variant="444" portrait="55" bestiary="true" bestiaryTransform="0,0,1" bestiaryAnim="Walk">
+		<gibs amount="1" blood="0" bone="0" eye="0" gut="1" large="0" />
+	</entity>
+</entities>
