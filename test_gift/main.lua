@@ -1,16 +1,29 @@
 -- 测试神秘礼物生成大便/煤块概率
+-- 设置
+local base_luck = 9
+local luck_step = 1
 
+-- 
 local game = Game();
 local mod = RegisterMod("test_gift", 1);
 local counts = {}
 local finished = false
 local pause = false
+local luck = base_luck
+
+function setluck()
+    local player = Isaac.GetPlayer(1)
+    player:AddCacheFlags(CacheFlag.CACHE_LUCK)
+    player:EvaluateItems()
+end
+
+function mod:setluck()
+    Isaac.GetPlayer(0).Luck = luck
+end
+mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, mod.setluck);
 
 function mod:handler_game_start()
-    local player = Isaac.GetPlayer(1)
-    for i=1,25 do -- 降低幸运
-        player:UsePill(PillEffect.PILLEFFECT_LUCK_DOWN, 0)
-    end
+    setluck()
     counts = {}
 end
 mod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED , mod.handler_game_start);
@@ -23,8 +36,6 @@ function add_count(SubType)
         is_poop = 1
     elseif SubType == CollectibleType.COLLECTIBLE_LUMP_OF_COAL then
         is_lump = 1
-    else
-        Isaac.ConsoleOutput(SubType .. ',')
     end
     luck = Isaac.GetPlayer(1).Luck
     if counts[luck] then
@@ -40,10 +51,10 @@ function mod:update()
     -- 生成文字
     for i in pairs(counts) do
         Isaac.RenderScaledText(
-            'Luck ' .. i .. ' -- ' .. string.format("Lump:Poop:Sum=%d:%d:%d=%.4f%%,%.4f%%", counts[i][3], counts[i][2], counts[i][1], 100*counts[i][2]/counts[i][1], 100*counts[i][3]/counts[i][1]),
-            100, 155+i*5, 0.5, 0.5, 255, 255, 255, 255);
+            string.format("Luck %.2f -- Lump:Poop:Sum=%d:%d:%d=%.4f%%,%.4f%%,%.4f%%", i, counts[i][3], counts[i][2], counts[i][1], 100*counts[i][2]/counts[i][1], 100*counts[i][3]/counts[i][1], 100*(counts[i][3]+counts[i][2])/counts[i][1]),
+            100, 20+(i-base_luck)/luck_step*5, 0.5, 0.5, 255, 255, 255, 255);
     end
-    if game:IsPaused() or game.TimeCounter < 30 or finished then
+    if game:IsPaused() or game.TimeCounter < 60 or finished then
         return
     end
 
@@ -58,12 +69,13 @@ function mod:update()
         -- player:UseActiveItem(CollectibleType.COLLECTIBLE_POOP,false,false,false,false)
         end
         remove()
-        if counts[luck]~= nil and counts[luck][1] >= 100 then -- 测试一万次，加幸运
-            if counts[luck][1] == counts[luck][2] or luck > 10 then
+        if counts[luck]~= nil and counts[luck][1] >= 10000 then -- 测试一万次，加幸运
+            if counts[luck][1] == counts[luck][2] or luck > 1099 then
                 -- 概率 100%, 停止测试
                 finished = true
             else
-                Isaac.GetPlayer(1):AddCollectible(CollectibleType.COLLECTIBLE_LUCKY_FOOT, 0)
+                luck = luck + luck_step
+                setluck()
             end
         end
     end
