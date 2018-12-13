@@ -1,7 +1,4 @@
--- 自由设置游戏变量
--- 例子：
---     set luck 1.2
---     set l 1.2
+-- 自由设置人物属性
 local mod = RegisterMod("anyvalue", 1);
 local game = Game();
 local values = {}
@@ -32,7 +29,7 @@ function mod:setvalue(Player, CacheFlag)
         Player.ShotSpeed = values['ShotSpeed']
     end
 end
-mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, mod.setvalue);
+mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, mod.setvalue, CacheFlag.CACHE_ALL);
 
 
 function split_param(line)
@@ -62,13 +59,13 @@ function mod:command(cmd, params)
             values['TearFallingAcceleration'] = value
         elseif (attr == "firedelay" or attr == "fd") then
             values['FireDelay'] = value
-        elseif (attr == "maxfiredelay" or attr == "mfd") then
+        elseif (attr == "maxfiredelay" or attr == "mfd" or attr == "tears") then
             values['MaxFireDelay'] = value
         elseif (attr == "shotspeed" or attr == "ss") then
             values['ShotSpeed'] = value
         end
-        -- Isaac.GetPlayer(1):AddCacheFlags(CacheFlag.CACHE_ALL)
-        Isaac.GetPlayer(1):AddCollectible(CollectibleType.COLLECTIBLE_LUCKY_FOOT, 0)
+        Isaac.GetPlayer(0):AddCacheFlags(CacheFlag.CACHE_ALL)
+        Isaac.GetPlayer(0):EvaluateItems()
     end
 end
 mod:AddCallback(ModCallbacks.MC_EXECUTE_CMD, mod.command);
