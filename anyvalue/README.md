@@ -6,9 +6,9 @@ set [attr] [value]
 
 - luck/l
 - damage/d
-tearheight/range/th
-tearfallingspeed/tfs
-tearfallingacceleration/tfa
-firedelay/fd
-maxfiredelay/mfd
-shotspeed/ss
+- tearheight/range/th
+- tearfallingspeed/tfs
+- tearfallingacceleration/tfa
+- firedelay/fd
+- maxfiredelay/mfd
+- shotspeed/ss
