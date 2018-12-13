@@ -4,8 +4,8 @@ set [attr] [value]
 
 # attr 列表
 
-luck/l
-damage/d
+- luck/l
+- damage/d
 tearheight/range/th
 tearfallingspeed/tfs
 tearfallingacceleration/tfa
